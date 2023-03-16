@@ -626,9 +626,30 @@ less time than task 2's. However, because there are many more switches to pass t
 in the case of h1 and h8, the difference is considerable for ping time numbers. 
 When only the first few packets are flooded in job 3, it is obvious that task 3 is substantially 
 faster or has a lower ping time. The switches will only resend the packet to the "mac to port" 
-mapping's associated port after locating the destination MAC address in the map. However, because there won't be as much network congestion,the following pings are significantly faster.
+mapping's associated port after locating the destination MAC address in the map. However, because there won't be as much network congestion,
+the following pings are significantly faster.
 
 3. Q.3 Run “iperf h1 h2” and “iperf h1 h8”.
+ANS - 
+mininet> iperf h1 h2
+*** Iperf: testing TCP bandwidth between h1 and h2 
+*** Results: ['8.81 Mbits/sec', '9.94 Mbits/sec']
+mininet> iperf h1 h8
+*** Iperf: testing TCP bandwidth between h1 and h8 
+*** Results: ['2.50 Mbits/sec', '2.96 Mbits/sec']
+mininet> 
+
 a. What is the throughput for each case?
+ANS - 
+mininet> iperf h1 h2
+*** Iperf: testing TCP bandwidth between h1 and h2 
+*** Results: ['8.81 Mbits/sec', '9.94 Mbits/sec']
+mininet> iperf h1 h8
+*** Iperf: testing TCP bandwidth between h1 and h8 
+*** Results: ['2.50 Mbits/sec', '2.96 Mbits/sec']
+mininet> 
 b. What is the difference from Task 2 and why do you think there is a change if
 there is?
+ANS - 
+In both instances, job 3's throughput is higher than task 2's. This is because there is less network congestion than in Task 3 since switches won't be overloaded and there won't be a flood of packets once mac to port map has learned all the ports. 
+Given that the routes are more pre-computed and learned with changes in the controller, we can see in h1 and h2 that job 1 and 2 had throughput improvements that were roughly three times as great as the average improvement. Due to the amount of hops and dropped packets, h1 and h8 have seen a little improvement but not a significant one.
