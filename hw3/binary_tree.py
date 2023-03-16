@@ -10,23 +10,23 @@ class BinaryTreeTopo(Topo):
         # Initialize topology
         Topo.__init__(self)
         # Add hosts
-        h1 = self.addHost('host_h1')
-        h2 = self.addHost('host_h2')
-        h3 = self.addHost('host_h3')
-        h4 = self.addHost('host_h4')
-        h5 = self.addHost('host_h5')
-        h6 = self.addHost('host_h6')
-        h7 = self.addHost('host_h7')
-        h8 = self.addHost('host_h8')
+        h1 = self.addHost('h1')
+        h2 = self.addHost('h2')
+        h3 = self.addHost('h3')
+        h4 = self.addHost('h4')
+        h5 = self.addHost('h5')
+        h6 = self.addHost('h6')
+        h7 = self.addHost('h7')
+        h8 = self.addHost('h8')
 
         # Add switches
-        s1 = self.addSwitch('switch_s1')
-        s2 = self.addSwitch('switch_s2')
-        s3 = self.addSwitch('switch_s3')
-        s4 = self.addSwitch('switch_s4')
-        s5 = self.addSwitch('switch_s5')
-        s6 = self.addSwitch('switch_s6')
-        s7 = self.addSwitch('switch_s7')
+        s1 = self.addSwitch('s1')
+        s2 = self.addSwitch('s2')
+        s3 = self.addSwitch('s3')
+        s4 = self.addSwitch('s4')
+        s5 = self.addSwitch('s5')
+        s6 = self.addSwitch('s6')
+        s7 = self.addSwitch('s7')
 
         # Add links
         self.addLink(s1, s2)
