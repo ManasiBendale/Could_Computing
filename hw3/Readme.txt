@@ -310,8 +310,8 @@ mininet>
 
 a. How long does it take (on average) to ping for each case?
 ANS - 
-h1 ping -c100 h2 -> 16.149 ms
-h1 ping -c100 h8 -> 4.095 ms
+h1 ping -c100 h2 -> 4.095 ms
+h1 ping -c100 h8 -> 16.149 ms
 
 b. What is the minimum and maximum ping you have observed?
 ANS - 
