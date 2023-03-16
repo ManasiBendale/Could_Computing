@@ -17,12 +17,9 @@ class Tutorial (object):
 
     msg = of.ofp_packet_out()
     msg.data = packet_in
-
-    # Add an action to send to the specified port
     action = of.ofp_action_output(port = out_port)
     msg.actions.append(action)
 
-    # Send message to switch
     self.connection.send(msg)
 
 
@@ -30,12 +27,6 @@ class Tutorial (object):
     self.resend_packet(packet_in, of.OFPP_ALL)
     
   def act_like_switch (self, packet, packet_in):
-    """
-    Implement switch-like behavior.
-    """
-
-    # Learn the port for the source MAC
-    # print("Src: ",str(packet.src),":", packet_in.in_port,"Dst:", str(packet.dst))
     if packet.src not in self.mac_to_port:
       #print("Learning that " + str(packet.src) + " is attached at port " + str(packet_in.in_port))
       self.mac_to_port[packet.src] = packet_in.in_port
@@ -62,10 +53,6 @@ class Tutorial (object):
 
     packet_in = event.ofp # The actual ofp_packet_in message.
 
-
-    # Comment out the following line and uncomment the one after
-    # when starting the exercise.
-    #self.act_like_hub(packet, packet_in)
     self.act_like_switch(packet, packet_in)
 
 
